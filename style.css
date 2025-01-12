@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+html{
+    font-family: 'Poppins', sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #1c1b22;
+    color: #fff;
+}
+
+input:not([type="file"]){
+    background: #2b2a33;
+    color: #fff;
+}
+
+#app{
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+#create-todo{
+    display:flex;
+}
+
+#create-todo-name{
+    flex: 1;
+}
+
+button{
+    cursor:pointer;
+    border-radius: 8px;
+    transition: .3s;
+    background: #2b2a33;
+    color: #fff;
+}
+
+button.icon{
+    width: 32px;
+    height: 32px;
+}
+
+button:not(.icon){
+    padding: 6px 10px;
+}
+
+button:hover{
+    filter:brightness(.8);
+}
+
+button.single-todo-delete{
+    background-color: red;
+}
+
+button.single-todo-complete{
+    background-color: limegreen;
+}
+
+button.single-todo-uncomplete{
+    background-color: orange;
+}
+
+ul#todos-list{
+    list-style-type: none;
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+ul#todos-list li.single-todo{
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    border-radius: 8px;
+    margin-block: 8px;
+    background: #444;
+    gap: 8px;
+}
+
+ul#todos-list li.single-todo button.single-todo-complete{
+    display: unset;
+}
+
+ul#todos-list li.single-todo.completed button.single-todo-complete{
+    display: none;
+}
+
+ul#todos-list li.single-todo button.single-todo-uncomplete{
+    display: none;
+}
+
+ul#todos-list li.single-todo.completed button.single-todo-uncomplete{
+    display: unset;
+}
+
+ul#todos-list li.single-todo.completed{
+    background: limegreen;
+    color: black;
+}
+
+ul#todos-list li h2{
+    flex: 1;
+}
+
+.utilities{
+    margin-block: 16px;
+}
+
+.utilities div{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+}
