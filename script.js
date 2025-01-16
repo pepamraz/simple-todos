@@ -90,8 +90,13 @@ function initializeTodos() {
   if (wasInitialized) {
     localStorage.setItem("todos", JSON.stringify(todos));
   } else {
-    todos = JSON.parse(localStorage.getItem("todos") || []);
-    wasInitialized=true;
+    try {
+      todos = JSON.parse(localStorage.getItem("todos") || "[]");
+    } catch (error) {
+      console.error("Error parsing todos from localStorage:", error);
+      todos = [];
+    }
+    wasInitialized = true;
   }
   todosList.innerHTML = "";
 
